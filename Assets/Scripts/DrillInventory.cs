@@ -17,11 +17,16 @@ public class DrillInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void AddObjectToDrill(Piece piece)
     {
-        listPieces.Add(piece);
+        if (piece == null)
+        {
+            Debug.Log("No pieces");
+            return;
+        }
+            listPieces.Add(piece);
     }
+
 }

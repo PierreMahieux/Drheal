@@ -26,19 +26,15 @@ public class Inventory : MonoBehaviour
             other.gameObject.SetActive(false);
         }
 
-        if (other.tag == "Drill")
+        if (other.tag == "Finish")
         {
-            for(int i=0;i<(mesPieces.Count);i++)
+            //Debug.Log("collide Drill\nliste pièces : " + mesPieces.Count);
+            for (int i=0;i<(mesPieces.Count);i++)
             {
                 other.gameObject.GetComponent<DrillInventory>().AddObjectToDrill(mesPieces[i]);
             }
 
             mesPieces.Clear();
-
-            if(mesPieces.Count == 0)
-            {
-                Debug.Log("list vide");
-            }
         }
     }
 }
