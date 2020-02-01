@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            target = null;
+            //target = null;
             canMove = false;
         }
     }
