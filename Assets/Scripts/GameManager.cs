@@ -30,15 +30,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetRanges();
+        //SetRanges();
+
+        //for (int i = 0; i < numberOfPieceToWin; i++)
+        //{
+        //    InstantiateRandomObjects();
+        //}
+        //Debug.Log(PlayerStats.score);
+
+        possiblePiecesSpawnPositions = new List<Vector3>() {new Vector3(8.97f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f),
+            new Vector3(35.71f,0f,13.83f), new Vector3(21.19f,0f,-9.17f), new Vector3(1.4f, 0f, 10.17f), new Vector3(11.89f,0f,10.97f), new Vector3(11.89f,0f,1.24f)};
 
         for (int i = 0; i < numberOfPieceToWin; i++)
         {
-            InstantiateRandomObjects();
-        }
-        Debug.Log(PlayerStats.score);
+            Instantiate(prefabPiece, possiblePiecesSpawnPositions[i], Quaternion.identity);
 
-        possiblePiecesSpawnPositions = new List<Vector3>() {new Vector3(8.97f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f), new Vector3(35.71f,0f,13.83f), new Vector3(21.19f,0f,-9.17f)};
+        }
     }
 
     // Update is called once per frame
