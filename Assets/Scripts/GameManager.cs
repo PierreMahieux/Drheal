@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject drill;
     public GameObject canevas;
     public GameObject prefabPiece;
+    public MenuManager menuManager;
 
     private Vector3 Min;
     private Vector3 Max;
@@ -35,7 +36,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         WinGame();
-
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            menuManager.ShowEscapeMenu();
+        }
     }
 
 
@@ -47,7 +51,7 @@ public class GameManager : MonoBehaviour
             if (inv.listPieces.Count == numberOfPieceToWin)
             {
                 // Debug.LogWarning("Win");
-                canevas.SetActive(true);
+                menuManager.ShowWinMenu();
             }
         }
     }

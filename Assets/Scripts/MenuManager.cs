@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+
+    public GameObject canevas;
+    public GameObject winUI;
+    public GameObject EscapeUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,4 +38,20 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void ShowWinMenu()
+    {
+        winUI.SetActive(true);
+    }
+
+    public void ShowEscapeMenu()
+    {
+        EscapeUI.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        EscapeUI.SetActive(false);
+    }
+
 }
