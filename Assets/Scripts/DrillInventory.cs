@@ -23,7 +23,7 @@ public class DrillInventory : MonoBehaviour
     {
         if (piece == null)
         {
-            Debug.Log("No pieces");
+            //Debug.Log("No pieces");
             return;
         }
             listPieces.Add(piece);

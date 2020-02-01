@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 15f;
+    internal bool canMove = true;
+
     private void Start()
     {
         if (!controller)
@@ -18,39 +20,43 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("z")){
-
-            Vector3 move = transform.forward;
-            //Debug.Log("pouet");
-
-            controller.Move(move * speed * Time.deltaTime);
-        }
-
-        if (Input.GetKey("d"))
+        if (canMove)
         {
+            if (Input.GetKey("z"))
+            {
 
-            Vector3 move = transform.right;
-            //Debug.Log("pouet");
+                Vector3 move = transform.forward;
+                //Debug.Log("pouet");
 
-            controller.Move(move * speed * Time.deltaTime);
-        }
+                controller.Move(move * speed * Time.deltaTime);
+            }
 
-        if (Input.GetKey("q"))
-        {
+            if (Input.GetKey("d"))
+            {
 
-            Vector3 move = transform.right;
-            //Debug.Log("pouet");
+                Vector3 move = transform.right;
+                //Debug.Log("pouet");
 
-            controller.Move(move * -speed * Time.deltaTime);
-        }
+                controller.Move(move * speed * Time.deltaTime);
+            }
 
-        if (Input.GetKey("s"))
-        {
+            if (Input.GetKey("q"))
+            {
 
-            Vector3 move = transform.forward;
-            //Debug.Log("pouet");
+                Vector3 move = transform.right;
+                //Debug.Log("pouet");
 
-            controller.Move(move * -speed * Time.deltaTime);
+                controller.Move(move * -speed * Time.deltaTime);
+            }
+
+            if (Input.GetKey("s"))
+            {
+
+                Vector3 move = transform.forward;
+                //Debug.Log("pouet");
+
+                controller.Move(move * -speed * Time.deltaTime);
+            } 
         }
     }
 }

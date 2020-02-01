@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public List<Piece> mesPieces;
     public GameObject ThirdPersonPlayer;
+    private Collider drillCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,8 @@ public class Inventory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="Piece")
+        drillCollider = other;
+        if (other.tag=="Piece")
         {
             mesPieces.Add(other.GetComponent<Piece>());
             //other.gameObject.SetActive(false);
@@ -32,13 +34,26 @@ public class Inventory : MonoBehaviour
 
         if (other.tag == "Finish")
         {
+            //Debug.Log("Colision Drill");
             //Debug.Log("collide Drill\nliste pièces : " + mesPieces.Count);
-            for (int i=0;i<(mesPieces.Count);i++)
-            {
-                other.gameObject.GetComponent<DrillInventory>().AddObjectToDrill(mesPieces[i]);
-            }
-
-            mesPieces.Clear();
+            StartCoroutine("CoroutineAddObjectToDrill");
+            //mesPieces.Clear();
         }
+    }
+
+    public IEnumerator CoroutineAddObjectToDrill()
+    {
+        gameObject.GetComponent<PlayerMovement>().canMove = false;
+        int countpiece = mesPieces.Count;
+        for (int i = 0; i < (countpiece); i++)
+        {
+            Piece currentPiece = mesPieces[0];
+            drillCollider.gameObject.GetComponent<DrillInventory>().AddObjectToDrill(currentPiece);
+            mesPieces.RemoveAt(0);
+            Destroy(currentPiece.gameObject);
+            Debug.Log("Coroutine Boucle :" + i);
+            yield return new WaitForSeconds(0.2f);
+        }
+        gameObject.GetComponent<PlayerMovement>().canMove = true;
     }
 }
