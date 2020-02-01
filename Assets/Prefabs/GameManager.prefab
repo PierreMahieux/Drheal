@@ -43,9 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa542a353b0db14f9fcaaa6df340fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drill: {fileID: 5232210395238622677, guid: a940602ee9a79274ebbf17c148ec88f5, type: 3}
-  canevas: {fileID: 141120546727624726, guid: 01c45dd6df8da8243aee5e3c9615f687, type: 3}
+  drill: {fileID: 0}
+  canevas: {fileID: 0}
   prefabPiece: {fileID: 4326150786188643869, guid: e449b747822e5e7459ba0ab86ec9c2c9,
     type: 3}
-  menuManager: {fileID: 6320209069675595744, guid: 6e4d9c7435d79124cb744f44108ca8c7,
-    type: 3}
+  menuManager: {fileID: 0}

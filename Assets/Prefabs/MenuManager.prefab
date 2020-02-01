@@ -47,5 +47,4 @@ MonoBehaviour:
   winUI: {fileID: 0}
   EscapeUI: {fileID: 0}
   GameOverUI: {fileID: 0}
-  gameManager: {fileID: 8184697127865799259, guid: 8b487913122a98142ba6ba6e7716c300,
-    type: 3}
+  gameManager: {fileID: 0}
