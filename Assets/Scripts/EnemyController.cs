@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public bool canMove=false;
     public GameObject target;
     public int damages = 1;
+    public float distanceStop = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class EnemyController : MonoBehaviour
         {
             if (agent)
             {
-                if(distance <= 2.3)
+                if(distance <= distanceStop)
                 {
                     agent.isStopped = true;
                     agent.velocity = Vector3.zero;
