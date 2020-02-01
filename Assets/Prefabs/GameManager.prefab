@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9fa497c120fb5342a50e019e653aff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drill: {fileID: 0}
+  canevas: {fileID: 0}
+  prefabPiece: {fileID: 4326150786188643869, guid: 5dfcb41453ba7c14b9973af544eda053,
+    type: 3}
