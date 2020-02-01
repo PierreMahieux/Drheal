@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Piece> MesPieces;
+    public List<Piece> mesPieces;
 
     // Start is called before the first frame update
     void Start()
@@ -22,22 +22,22 @@ public class Inventory : MonoBehaviour
     {
         if(other.tag=="Piece")
         {
-            MesPieces.Add(other.GetComponent<Piece>());
+            mesPieces.Add(other.GetComponent<Piece>());
             other.gameObject.SetActive(false);
-            foreach (var item in MesPieces)
-            {
-                Debug.Log(item.Nom);
-            }
         }
 
         if (other.tag == "Drill")
         {
-            other.gameObject.GetComponent<DrillInventory>();
-
-            MesPieces.Remove(other.GetComponent<Piece>());
-            foreach (var item in MesPieces)
+            for(int i=0;i<(mesPieces.Count);i++)
             {
-                Debug.Log(item.Nom);
+                other.gameObject.GetComponent<DrillInventory>().AddObjectToDrill(mesPieces[i]);
+            }
+
+            mesPieces.Clear();
+
+            if(mesPieces.Count == 0)
+            {
+                Debug.Log("list vide");
             }
         }
     }
