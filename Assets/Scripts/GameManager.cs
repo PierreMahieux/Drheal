@@ -38,22 +38,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void PlayGame()
-    {
-       // Debug.Log("Starting Game");
-        SceneManager.LoadScene("Loic");
-     }
-
-    public void QuitGame()
-    {
-       // Debug.Log("Leaving Game");
-        Application.Quit();
-    }
-
-    public void GoToMenu()
-    {
-        SceneManager.LoadScene("Menu");
-    }
 
     public void WinGame()
     {
