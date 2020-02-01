@@ -16,9 +16,14 @@ public class GameManager : MonoBehaviour
     private float _yAxis;
     private float _zAxis; 
     private Vector3 _randomPosition;
-
+    
     private int numberOfPieceToWin = 5;
 
+
+    private void Awake()
+    {
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +34,7 @@ public class GameManager : MonoBehaviour
         {
             InstantiateRandomObjects();
         }
-
+        Debug.Log(PlayerStats.score);
     }
 
     // Update is called once per frame
@@ -40,6 +45,7 @@ public class GameManager : MonoBehaviour
         {
             menuManager.ShowEscapeMenu();
         }
+        
     }
 
 
@@ -58,8 +64,8 @@ public class GameManager : MonoBehaviour
 
     private void SetRanges()
         {
-            Min = new Vector3(0, 0, 0); 
-            Max = new Vector3(15, 1, 15); 
+            Min = new Vector3(-15, 0, -15); 
+            Max = new Vector3(15, 0, 15); 
         }
 
     private void InstantiateRandomObjects()
@@ -81,4 +87,9 @@ public class GameManager : MonoBehaviour
         _randomPosition = new Vector3(_xAxis, _yAxis, _zAxis);
     }
 
+    public void NextLvl()
+    {
+        PlayerStats.score++;
+        SceneManager.LoadScene("Loic");
+    }
 }

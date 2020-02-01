@@ -22,7 +22,6 @@ public class Inventory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        drillCollider = other;
         if (other.tag=="Piece")
         {
             mesPieces.Add(other.GetComponent<Piece>());
@@ -34,26 +33,38 @@ public class Inventory : MonoBehaviour
 
         if (other.tag == "Finish")
         {
+            drillCollider = other;
             //Debug.Log("Colision Drill");
             //Debug.Log("collide Drill\nliste pièces : " + mesPieces.Count);
             StartCoroutine("CoroutineAddObjectToDrill");
-            //mesPieces.Clear();
+            //gameObject.GetComponent<PlayerMovement>().canMove = false;
         }
     }
 
     public IEnumerator CoroutineAddObjectToDrill()
     {
-        gameObject.GetComponent<PlayerMovement>().canMove = false;
+        
+
         int countpiece = mesPieces.Count;
         for (int i = 0; i < (countpiece); i++)
         {
+            
             Piece currentPiece = mesPieces[0];
             drillCollider.gameObject.GetComponent<DrillInventory>().AddObjectToDrill(currentPiece);
             mesPieces.RemoveAt(0);
             Destroy(currentPiece.gameObject);
             Debug.Log("Coroutine Boucle :" + i);
             yield return new WaitForSeconds(0.2f);
+            
         }
-        gameObject.GetComponent<PlayerMovement>().canMove = true;
+        //gameObject.GetComponent<PlayerMovement>().canMove = true;
+        
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Finish")
+        {
+            StopCoroutine("CoroutineAddObjectToDrill");
+        }
     }
 }
