@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("z")){
 
             Vector3 move = transform.forward;
-            Debug.Log("pouet");
+            //Debug.Log("pouet");
 
             controller.Move(move * speed * Time.deltaTime);
         }
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Vector3 move = transform.right;
-            Debug.Log("pouet");
+            //Debug.Log("pouet");
 
             controller.Move(move * speed * Time.deltaTime);
         }
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Vector3 move = transform.right;
-            Debug.Log("pouet");
+            //Debug.Log("pouet");
 
             controller.Move(move * -speed * Time.deltaTime);
         }
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Vector3 move = transform.forward;
-            Debug.Log("pouet");
+            //Debug.Log("pouet");
 
             controller.Move(move * -speed * Time.deltaTime);
         }
