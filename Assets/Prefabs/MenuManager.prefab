@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1e07d82b54ba4897ca609b252b403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canevas: {fileID: 0}
+  winUI: {fileID: 0}
