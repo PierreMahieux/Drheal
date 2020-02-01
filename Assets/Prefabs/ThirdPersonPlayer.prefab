@@ -132,7 +132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c6f07c8658470c4cbf3d9678c36f806, type: 2}
+  - {fileID: 2100000, guid: acf119ef2589dcd478f1085ebc383746, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8451756232388514916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97fa10b4ea113194eaccc753980ab7c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 32a149deeb62cb348b2b5e89e53ba0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
@@ -248,9 +248,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &8982776080948930472
 MonoBehaviour:
@@ -261,7 +261,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8451756232388514916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d7be376a42140a4da4f158ff97a453b, type: 3}
+  m_Script: {fileID: 11500000, guid: 25d18ffd4355c3b4b8a514be621902d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mesPieces: []
+  ThirdPersonPlayer: {fileID: 8451756232388514916}
