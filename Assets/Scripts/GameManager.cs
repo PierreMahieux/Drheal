@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject drill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,10 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Leaving Game");
+    }
+
+    public void WinGame()
+    {
+        
     }
 }
