@@ -30,14 +30,15 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        /*if (other.tag == "Drill")
+        if (other.tag == "Drill")
         {
             other.gameObject.GetComponent<DrillInventory>();
+
             MesPieces.Remove(other.GetComponent<Piece>());
             foreach (var item in MesPieces)
             {
                 Debug.Log(item.Nom);
             }
-        }*/
+        }
     }
 }
