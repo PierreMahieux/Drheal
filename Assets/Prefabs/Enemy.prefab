@@ -131,13 +131,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1535261048837919730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ab88660067f534f94cb662dfeabe25, type: 3}
+  m_Script: {fileID: 11500000, guid: 57ff8410a011111469a934a9cef79ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1535261048837919733}
   canMove: 0
-  target: {fileID: 0}
+  target: {fileID: 1007878901509031347, guid: e865433d00820294883d823b0506af48, type: 3}
   damages: 1
+  distanceStop: 2.5
 --- !u!65 &1535261048837919626
 BoxCollider:
   m_ObjectHideFlags: 0

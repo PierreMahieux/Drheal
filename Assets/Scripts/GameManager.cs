@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private float _yAxis;
     private float _zAxis; 
     private Vector3 _randomPosition;
+
+    private List<Vector3> possiblePiecesSpawnPositions;
     
     private int numberOfPieceToWin = 5;
 
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
             InstantiateRandomObjects();
         }
         Debug.Log(PlayerStats.score);
+
+        possiblePiecesSpawnPositions = new List<Vector3>() {new Vector3(8.97f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f), new Vector3(35.71f,0f,13.83f), new Vector3(21.19f,0f,-9.17f)};
     }
 
     // Update is called once per frame

@@ -132,7 +132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4048034fb1a1d6449a10bde99b2c92a8, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,11 +217,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1007878901509031347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d00ec4dad91a9843974d02c503b9f65, type: 3}
+  m_Script: {fileID: 11500000, guid: fda6250f61e475e4ead11067927a976f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1007878901509031345}
-  speed: 12
+  speed: 15
 --- !u!136 &1007878901509031358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1007878901509031347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2db82f3d2ff8b642b9826cbd68cddc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d35afd96a5c6f0469f8f9dce582a353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mesPieces: []

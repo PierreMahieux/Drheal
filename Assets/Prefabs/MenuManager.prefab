@@ -40,8 +40,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8375744267425695355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e1e07d82b54ba4897ca609b252b403, type: 3}
+  m_Script: {fileID: 11500000, guid: 49760db2ed1556046a379def657248cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canevas: {fileID: 0}
+  canevas: {fileID: 141120546727624726, guid: 01c45dd6df8da8243aee5e3c9615f687, type: 3}
   winUI: {fileID: 0}
+  EscapeUI: {fileID: 0}
+  GameOverUI: {fileID: 0}
+  gameManager: {fileID: 8184697127865799259, guid: 8b487913122a98142ba6ba6e7716c300,
+    type: 3}
