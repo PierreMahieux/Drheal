@@ -6,6 +6,7 @@ public class Piece : MonoBehaviour
 {
 
     public string Nom = "piece";
+    public bool isPickedUp = false;
 
     // Start is called before the first frame update
     void Start()

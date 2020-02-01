@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Piece> mesPieces;
+    public GameObject ThirdPersonPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,10 @@ public class Inventory : MonoBehaviour
         if(other.tag=="Piece")
         {
             mesPieces.Add(other.GetComponent<Piece>());
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+            other.gameObject.transform.SetParent(ThirdPersonPlayer.transform);
+            other.gameObject.GetComponent<SphereCollider>().enabled = false;
+            other.gameObject.transform.localScale = new Vector3(other.gameObject.transform.localScale.x / 2, other.gameObject.transform.localScale.y / 2, other.gameObject.transform.localScale.z / 2);
         }
 
         if (other.tag == "Finish")

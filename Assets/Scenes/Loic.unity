@@ -893,6 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesPieces: []
+  ThirdPersonPlayer: {fileID: 777925124}
 --- !u!1 &800053260
 GameObject:
   m_ObjectHideFlags: 0
