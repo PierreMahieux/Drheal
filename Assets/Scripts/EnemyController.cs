@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     public bool canMove=false;
     public GameObject target;
+    public int damages = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -65,8 +66,13 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            //collision.getcomponent<PlayerHealth>().Hurt();
+            Hurt();
             Debug.Log("aie");
         }
+    }
+
+    private void Hurt()
+    {
+        PlayerStats.currentHealth = PlayerStats.currentHealth - damages;
     }
 }

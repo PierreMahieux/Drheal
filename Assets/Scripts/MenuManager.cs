@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
     public GameObject canevas;
     public GameObject winUI;
     public GameObject EscapeUI;
+    public GameObject GameOverUI;
+
     public GameManager gameManager;
 
     // Start is called before the first frame update
@@ -48,6 +50,11 @@ public class MenuManager : MonoBehaviour
     public void ShowEscapeMenu()
     {
         EscapeUI.SetActive(true);
+    }
+
+    public void ShowGameOverMenu()
+    {
+        GameOverUI.SetActive(true);
     }
 
     public void ResumeGame()

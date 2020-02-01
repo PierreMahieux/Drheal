@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         WinGame();
+        GameOver();
+
         if (Input.GetKey(KeyCode.Escape))
         {
             menuManager.ShowEscapeMenu();
@@ -91,5 +93,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerStats.score++;
         SceneManager.LoadScene("Loic");
+    }
+
+    public void GameOver()
+    {
+        if (PlayerStats.currentHealth == 0)
+        {
+            menuManager.ShowGameOverMenu();
+        }
     }
 }
