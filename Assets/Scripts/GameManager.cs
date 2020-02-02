@@ -16,17 +16,17 @@ public class GameManager : MonoBehaviour
     private Vector3 Max;
     private float _xAxis;
     private float _yAxis;
-    private float _zAxis; 
+    private float _zAxis;
     private Vector3 _randomPosition;
 
     private List<Vector3> possiblePiecesSpawn;
-    
+
     public int numberOfPieceToWin = 5;
     public int numberOfEnnemies = 3;
 
     private void Awake()
     {
-        
+
     }
 
     // Start is called before the first frame update
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             //Instantiate(prefabPiece, possiblePiecesSpawn[0], Quaternion.identity);
             //possiblePiecesSpawn.RemoveAt(0);
 
-            Instantiate(prefabPiece, GetRandomLocation(), Quaternion.identity); 
+            Instantiate(prefabPiece, GetRandomLocation(), Quaternion.identity);
         }
 
         for (int i = 0; i < numberOfEnnemies; i++)
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         {
             menuManager.ShowEscapeMenu();
         }
-        
+
     }
 
 
@@ -78,10 +78,10 @@ public class GameManager : MonoBehaviour
     }
 
     private void SetRanges()
-        {
-            Min = new Vector3(-15, 0, -15); 
-            Max = new Vector3(15, 0, 15); 
-        }
+    {
+        Min = new Vector3(-15, 0, -15);
+        Max = new Vector3(15, 0, 15);
+    }
 
     private void InstantiateRandomObjects()
     {
@@ -130,4 +130,20 @@ public class GameManager : MonoBehaviour
 
         return point;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void PlayGame()
+    {
+        // Debug.Log("Starting Game");
+        SceneManager.LoadScene("Loic");
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 }
