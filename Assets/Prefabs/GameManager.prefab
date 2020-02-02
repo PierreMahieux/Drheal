@@ -50,5 +50,11 @@ MonoBehaviour:
   prefabEnnemy: {fileID: 1535261048837919730, guid: d47e3c2c3bf1b6a4384c170e75fb4c72,
     type: 3}
   menuManager: {fileID: 0}
+  playerMovement: {fileID: 0}
+  PiecesPrefab:
+  - {fileID: 4326150786188643869, guid: 0da4dc1f15ceb1941985c0d08c066a5c, type: 3}
+  - {fileID: 4326150786188643869, guid: c4b6fc2e6ad20ee48b270431dd5fa768, type: 3}
+  - {fileID: 4326150786188643869, guid: 22ec2820306a5334faecaba824795143, type: 3}
+  - {fileID: 4326150786188643869, guid: e449b747822e5e7459ba0ab86ec9c2c9, type: 3}
   numberOfPieceToWin: 5
   numberOfEnnemies: 30
