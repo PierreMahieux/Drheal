@@ -66,4 +66,9 @@ public class MenuManager : MonoBehaviour
     {
         gameManager.NextLvl();
     }
+
+    public void Restard()
+    {
+        gameManager.PlayGame();
+    }
 }
