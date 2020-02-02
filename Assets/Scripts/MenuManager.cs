@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -12,13 +13,19 @@ public class MenuManager : MonoBehaviour
     public GameObject EscapeUI;
     public GameObject GameOverUI;
 
+    public Inventory PlayerInventory;
+
     public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         //EscapeUI = canevas.transform.Find("EscapeUI").gameObject;
-
+        if (!PlayerInventory)
+        {
+            PlayerInventory = FindObjectOfType<Inventory>();
+        }
+       
     }
 
     // Update is called once per frame
@@ -28,6 +35,7 @@ public class MenuManager : MonoBehaviour
         {
             canevas.transform.Find("Image").gameObject.SetActive(false);
         }
+        UpdatePlayerUI();
     }
 
     public void PlayGame()
@@ -88,5 +96,12 @@ public class MenuManager : MonoBehaviour
     public void ShowAboutMenu()
     {
         canevas.transform.Find("Image").gameObject.SetActive(true);
+    }
+
+    public void UpdatePlayerUI()
+    {
+        canevas.transform.Find("PlayerUI").Find("TextScore").GetComponent<Text>().text = "LVL : " + PlayerStats.score ;
+        canevas.transform.Find("PlayerUI").Find("TextHealth").GetComponent<Text>().text = "Health : " + PlayerStats.currentHealth + "/" + PlayerStats.maxHealth ;
+        canevas.transform.Find("PlayerUI").Find("TextPieces").GetComponent<Text>().text = "Piece : " + PlayerInventory.mesPieces.Count + "/" + gameManager.numberOfPieceToWin;
     }
 }
