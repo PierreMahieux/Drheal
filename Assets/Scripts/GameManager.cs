@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     public void NextLvl()
     {
         PlayerStats.score++;
-        SceneManager.LoadScene("Loic");
+        SceneManager.LoadScene("BasicLevel");
     }
 
     public void GameOver()
