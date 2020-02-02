@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
     public void PlayGame()
     {
         // Debug.Log("Starting Game");
-        SceneManager.LoadScene("Loic");
+        SceneManager.LoadScene("BasicLevel");
     }
     public void QuitGame()
     {
