@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
             if (inv.listPieces.Count == numberOfPieceToWin)
             {
                 // Debug.LogWarning("Win");
+                PauseGame();
                 menuManager.ShowWinMenu();
             }
         }
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerStats.currentHealth == 0)
         {
+            PlayerStats.currentHealth = -1;
             menuManager.ShowGameOverMenu();
             PauseGame();
         }
