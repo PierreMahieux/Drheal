@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private float _zAxis; 
     private Vector3 _randomPosition;
 
-    private List<Vector3> possiblePiecesSpawnPositions;
+    private List<Vector3> possiblePiecesSpawn;
     
     private int numberOfPieceToWin = 5;
 
@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
         //}
         //Debug.Log(PlayerStats.score);
 
-        possiblePiecesSpawnPositions = new List<Vector3>() {new Vector3(8.97f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f),
+        possiblePiecesSpawn = new List<Vector3>() {new Vector3(9.71f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f),
             new Vector3(35.71f,0f,13.83f), new Vector3(21.19f,0f,-9.17f), new Vector3(1.4f, 0f, 10.17f), new Vector3(11.89f,0f,10.97f), new Vector3(11.89f,0f,1.24f)};
 
         for (int i = 0; i < numberOfPieceToWin; i++)
         {
-            Instantiate(prefabPiece, possiblePiecesSpawnPositions[i], Quaternion.identity);
+            Instantiate(prefabPiece, possiblePiecesSpawn[i], Quaternion.identity);
 
         }
     }
