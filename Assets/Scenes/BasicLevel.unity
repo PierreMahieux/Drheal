@@ -2241,12 +2241,6 @@ PrefabInstance:
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 1232639644}
-    - target: {fileID: 8184697127865799259, guid: 8b487913122a98142ba6ba6e7716c300,
-        type: 3}
-      propertyPath: prefabEnnemy
-      value: 
-      objectReference: {fileID: 1535261048837919730, guid: d47e3c2c3bf1b6a4384c170e75fb4c72,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b487913122a98142ba6ba6e7716c300, type: 3}
 --- !u!1 &656598603
@@ -2565,16 +2559,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007878901509031346, guid: e865433d00820294883d823b0506af48,
-        type: 3}
-      propertyPath: sensitivityX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007878901509031346, guid: e865433d00820294883d823b0506af48,
-        type: 3}
-      propertyPath: sensitivityY
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1007878901509031347, guid: e865433d00820294883d823b0506af48,
         type: 3}

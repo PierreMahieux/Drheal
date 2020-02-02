@@ -47,4 +47,8 @@ MonoBehaviour:
   canevas: {fileID: 0}
   prefabPiece: {fileID: 4326150786188643869, guid: e449b747822e5e7459ba0ab86ec9c2c9,
     type: 3}
+  prefabEnnemy: {fileID: 1535261048837919730, guid: d47e3c2c3bf1b6a4384c170e75fb4c72,
+    type: 3}
   menuManager: {fileID: 0}
+  numberOfPieceToWin: 5
+  numberOfEnnemies: 3
