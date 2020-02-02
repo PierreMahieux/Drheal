@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 3542547686653403169, guid: 2eba14521b96c5844a1dc8e8269ca4eb,
         type: 3}
       propertyPath: numberOfEnnemies
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3542547686653403169, guid: 2eba14521b96c5844a1dc8e8269ca4eb,
         type: 3}
@@ -3890,7 +3890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1043933381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9680,7 +9680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1563733012
 RectTransform:
   m_ObjectHideFlags: 0

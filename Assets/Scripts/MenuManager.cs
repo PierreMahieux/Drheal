@@ -24,7 +24,10 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            canevas.transform.Find("Image").gameObject.SetActive(false);
+        }
     }
 
     public void PlayGame()
@@ -80,5 +83,10 @@ public class MenuManager : MonoBehaviour
     public void Restart()
     {
         gameManager.PlayGame();
+    }
+
+    public void ShowAboutMenu()
+    {
+        canevas.transform.Find("Image").gameObject.SetActive(true);
     }
 }
