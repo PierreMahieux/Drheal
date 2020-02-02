@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        UnPauseGame();
         possiblePiecesSpawn = new List<Vector3>() {new Vector3(9.71f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f),
             new Vector3(35.71f,0f,13.83f), new Vector3(21.19f,0f,-9.17f), new Vector3(1.4f, 0f, 10.17f), new Vector3(11.89f,0f,10.97f), new Vector3(11.89f,0f,1.24f)};
 
@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
         if (PlayerStats.currentHealth == 0)
         {
             menuManager.ShowGameOverMenu();
+            PauseGame();
         }
     }
 
