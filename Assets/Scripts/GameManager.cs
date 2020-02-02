@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject prefabEnnemy;
     public MenuManager menuManager;
     public PlayerMovement playerMovement;
-
+    [SerializeField]
+    private List<GameObject> PiecesPrefab;
     private Vector3 Min;
     private Vector3 Max;
     private float _xAxis;
@@ -28,7 +29,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
+        if (PiecesPrefab.Count==0)
+        {
+            Debug.LogError("List of prefab is empty, add some pieces");
+        }
     }
 
     // Start is called before the first frame update
@@ -43,8 +47,16 @@ public class GameManager : MonoBehaviour
         {
             //Instantiate(prefabPiece, possiblePiecesSpawn[0], Quaternion.identity);
             //possiblePiecesSpawn.RemoveAt(0);
-
-            Instantiate(prefabPiece, GetRandomLocation(), Quaternion.identity);
+            GameObject nextPiece = this.selectRandomPrefab();
+            if (nextPiece!=null)
+            {
+                Instantiate(nextPiece, GetRandomLocation(), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(prefabPiece, GetRandomLocation(), Quaternion.identity);
+            }
+            
         }
 
         for (int i = 0; i < numberOfEnnemies; i++)
@@ -164,6 +176,17 @@ public class GameManager : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public GameObject selectRandomPrefab()
+    {
+        if (PiecesPrefab.Count == 0)
+        {
+            Debug.LogError("List of prefab is empty, add some pieces");
+            return new GameObject();
+        }
+        int index = UnityEngine.Random.Range(0,PiecesPrefab.Count-1);
+        return PiecesPrefab[index];
     }
 
 }
