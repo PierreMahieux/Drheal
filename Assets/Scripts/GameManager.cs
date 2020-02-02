@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject drill;
     public GameObject canevas;
     public GameObject prefabPiece;
+    public GameObject prefabEnnemy;
     public MenuManager menuManager;
 
     private Vector3 Min;
@@ -19,8 +21,8 @@ public class GameManager : MonoBehaviour
 
     private List<Vector3> possiblePiecesSpawn;
     
-    private int numberOfPieceToWin = 5;
-
+    public int numberOfPieceToWin = 5;
+    public int numberOfEnnemies = 3;
 
     private void Awake()
     {
@@ -30,21 +32,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SetRanges();
-
-        //for (int i = 0; i < numberOfPieceToWin; i++)
-        //{
-        //    InstantiateRandomObjects();
-        //}
-        //Debug.Log(PlayerStats.score);
 
         possiblePiecesSpawn = new List<Vector3>() {new Vector3(9.71f,0f,-9.17f), new Vector3(22.53f,0f,-5.58f),
             new Vector3(35.71f,0f,13.83f), new Vector3(21.19f,0f,-9.17f), new Vector3(1.4f, 0f, 10.17f), new Vector3(11.89f,0f,10.97f), new Vector3(11.89f,0f,1.24f)};
 
         for (int i = 0; i < numberOfPieceToWin; i++)
         {
-            Instantiate(prefabPiece, possiblePiecesSpawn[i], Quaternion.identity);
+            //Instantiate(prefabPiece, possiblePiecesSpawn[0], Quaternion.identity);
+            //possiblePiecesSpawn.RemoveAt(0);
 
+            Instantiate(prefabPiece, GetRandomLocation(), Quaternion.identity); 
+        }
+
+        for (int i = 0; i < numberOfEnnemies; i++)
+        {
+            Instantiate(prefabEnnemy, GetRandomLocation(), Quaternion.identity);
         }
     }
 
@@ -112,5 +114,20 @@ public class GameManager : MonoBehaviour
         {
             menuManager.ShowGameOverMenu();
         }
+    }
+
+
+    Vector3 GetRandomLocation()
+    {
+        NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
+
+        // Pick the first indice of a random triangle in the nav mesh
+        int t = Random.Range(0, navMeshData.indices.Length - 3);
+
+        // Select a random point on it
+        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
+        Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+
+        return point;
     }
 }

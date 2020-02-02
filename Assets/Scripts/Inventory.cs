@@ -53,7 +53,6 @@ public class Inventory : MonoBehaviour
             drillCollider.gameObject.GetComponent<DrillInventory>().AddObjectToDrill(currentPiece);
             mesPieces.RemoveAt(0);
             Destroy(currentPiece.gameObject);
-            Debug.Log("Coroutine Boucle :" + i);
             yield return new WaitForSeconds(0.2f);
             
         }
