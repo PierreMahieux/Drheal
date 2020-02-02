@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
         
 
         int countpiece = mesPieces.Count;
-        for (int i = 0; i < (countpiece); i++)
+        while(mesPieces.Count > 0)
         {
             
             Piece currentPiece = mesPieces[0];
