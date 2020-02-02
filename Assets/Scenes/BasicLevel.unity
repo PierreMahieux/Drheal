@@ -143,6 +143,16 @@ PrefabInstance:
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 1232639644}
+    - target: {fileID: 3542547686653403169, guid: 2eba14521b96c5844a1dc8e8269ca4eb,
+        type: 3}
+      propertyPath: numberOfEnnemies
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542547686653403169, guid: 2eba14521b96c5844a1dc8e8269ca4eb,
+        type: 3}
+      propertyPath: numberOfPieceToWin
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3542547688416430104, guid: 2eba14521b96c5844a1dc8e8269ca4eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3637,7 +3647,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31530
+  m_Name: pb_Mesh15742
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8554,7 +8564,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1923329001
 MeshCollider:
