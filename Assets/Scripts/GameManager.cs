@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject prefabPiece;
     public GameObject prefabEnnemy;
     public MenuManager menuManager;
+    public PlayerMovement playerMovement;
 
     private Vector3 Min;
     private Vector3 Max;
@@ -48,6 +50,18 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(prefabEnnemy, GetRandomLocation(), Quaternion.identity);
         }
+    }
+
+    internal void PauseGame()
+    {
+        Time.timeScale = 0;
+        playerMovement.canMove = false;
+    }
+
+    internal void UnPauseGame()
+    {
+        Time.timeScale = 1;
+        playerMovement.canMove = true;
     }
 
     // Update is called once per frame
@@ -122,11 +136,11 @@ public class GameManager : MonoBehaviour
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
 
         // Pick the first indice of a random triangle in the nav mesh
-        int t = Random.Range(0, navMeshData.indices.Length - 3);
+        int t = UnityEngine.Random.Range(0, navMeshData.indices.Length - 3);
 
         // Select a random point on it
-        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
-        Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], UnityEngine.Random.value);
+        Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], UnityEngine.Random.value);
 
         return point;
     }

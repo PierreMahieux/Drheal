@@ -49,6 +49,7 @@ public class MenuManager : MonoBehaviour
 
     public void ShowEscapeMenu()
     {
+        gameManager.PauseGame();
         EscapeUI.SetActive(true);
     }
 
@@ -59,6 +60,7 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        gameManager.UnPauseGame();
         EscapeUI.SetActive(false);
     }
 
@@ -67,7 +69,7 @@ public class MenuManager : MonoBehaviour
         gameManager.NextLvl();
     }
 
-    public void Restard()
+    public void Restart()
     {
         gameManager.PlayGame();
     }

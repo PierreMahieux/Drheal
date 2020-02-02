@@ -59,24 +59,25 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 move = transform.forward;
                 controller.Move(move * -speed * Time.deltaTime);
             } 
+
+
+            //rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+            //rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+            //rotationX = ClampAngle(rotationX, minimumX, maximumX);
+            //rotationY = ClampAngle(rotationY, minimumY, maximumY);
+            //Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
+            //Quaternion yQuaternion = Quaternion.AngleAxis(rotationY, -Vector3.right);
+            //transform.localRotation = originalRotation * xQuaternion * yQuaternion;
+
+            rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+            rotationX = ClampAngle(rotationX, minimumX, maximumX);
+            Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
+            transform.localRotation = originalRotation * xQuaternion;
+
+
         }
 
-
-        //rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-        //rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-        //rotationX = ClampAngle(rotationX, minimumX, maximumX);
-        //rotationY = ClampAngle(rotationY, minimumY, maximumY);
-        //Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
-        //Quaternion yQuaternion = Quaternion.AngleAxis(rotationY, -Vector3.right);
-        //transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-
-        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-        rotationX = ClampAngle(rotationX, minimumX, maximumX);
-        Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
-        transform.localRotation = originalRotation * xQuaternion;
-    }
-
-    public static float ClampAngle(float angle, float min, float max)
+        public static float ClampAngle(float angle, float min, float max)
     {
         if (angle < -360F)
          angle += 360F;
