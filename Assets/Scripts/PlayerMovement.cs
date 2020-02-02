@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Vector3 move = transform.forward;
                 controller.Move(move * -speed * Time.deltaTime);
-            } 
+            }
 
 
             //rotationX += Input.GetAxis("Mouse X") * sensitivityX;
@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+    }
 
         public static float ClampAngle(float angle, float min, float max)
     {
