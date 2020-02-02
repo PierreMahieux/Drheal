@@ -10,7 +10,6 @@ public class EnemyController : MonoBehaviour
     public GameObject target;
     public int damages = 1;
     public float distanceStop = 2.5f;
-    public MenuManager menuManager;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +61,5 @@ public class EnemyController : MonoBehaviour
     private void Hurt()
     {
         PlayerStats.currentHealth = PlayerStats.currentHealth - damages;
-        if (PlayerStats.currentHealth == 0)
-        {
-            menuManager.ShowGameOverMenu();
-        }
     }
 }

@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float minimumY = -60F;
     public float maximumY = 60F;
     float rotationX = 0F;
-    float rotationY = 0F;
+    //float rotationY = 0F;
     Quaternion originalRotation;
 
     private void Start()

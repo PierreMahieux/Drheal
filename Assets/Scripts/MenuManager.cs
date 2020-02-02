@@ -26,6 +26,21 @@ public class MenuManager : MonoBehaviour
         
     }
 
+    public void PlayGame()
+    {
+        // Debug.Log("Starting Game");
+        SceneManager.LoadScene("BasicLevel");
+    }
+    public void QuitGame()
+    {
+        // Debug.Log("Leaving Game");
+        Application.Quit();
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
     public void ShowWinMenu()
     {
@@ -50,5 +65,10 @@ public class MenuManager : MonoBehaviour
     public void NextLvl()
     {
         gameManager.NextLvl();
+    }
+
+    public void Restard()
+    {
+        gameManager.PlayGame();
     }
 }
