@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,6 +42,13 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    internal void HideAllUIs()
+    {
+        winUI.SetActive(false);
+        EscapeUI.SetActive(false);
+        GameOverUI.SetActive(false);
+}
 
     public void ShowWinMenu()
     {
