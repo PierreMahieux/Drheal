@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49760db2ed1556046a379def657248cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canevas: {fileID: 141120546727624726, guid: 01c45dd6df8da8243aee5e3c9615f687, type: 3}
+  canevas: {fileID: 0}
   winUI: {fileID: 0}
   EscapeUI: {fileID: 0}
   GameOverUI: {fileID: 0}

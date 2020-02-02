@@ -16,7 +16,8 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //EscapeUI = canevas.transform.Find("EscapeUI").gameObject;
+
     }
 
     // Update is called once per frame
@@ -30,7 +31,6 @@ public class MenuManager : MonoBehaviour
         // Debug.Log("Starting Game");
         SceneManager.LoadScene("Loic");
     }
-
     public void QuitGame()
     {
         // Debug.Log("Leaving Game");
